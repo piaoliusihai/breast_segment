@@ -1,2 +1,25 @@
 import dicom2nifti
-dicom2nifti.convert_directory("/home/xqm0629/Segmentation_breast_cancer_MRI/Dataset/1.3.46.670589.62.1.32203.2020.6.23.3.57.13.236.10788.14852", "/home/xqm0629/Segmentation_breast_cancer_MRI/Dataset/", compression=True)
+import pandas as pd
+import os
+import os.path as osp
+import shutil
+df = pd.read_excel("./9case_20240118.xlsx")
+nii_path = "/scratch/groups/ogevaert/HER2BreastCancer/nii_for_segment"
+for row in range(df.shape[0]):
+	file_path = df.iloc[row][0]
+	pid = df.iloc[row][1]
+	shorted_path_list = file_path.split("/")[:-1]
+	original_file_path = "/".join(shorted_path_list)
+	pid_dir = osp.join(nii_path, str(pid))
+	print(original_file_path)
+	print(pid)
+	print(pid_dir)
+	if not osp.exists(pid_dir):
+		os.mkdir(pid_dir)
+	dicom2nifti.convert_directory(original_file_path, pid_dir, compression=True)
+	print("nii created")
+	new_file_name = osp.join(nii_path, str(pid)+".nii.gz")
+	for file in os.listdir(pid_dir):
+		print("moving file %s" %(file))
+		shutil.move(osp.join(pid_dir, file), new_file_name)
+	os.rmdir(pid_dir)
