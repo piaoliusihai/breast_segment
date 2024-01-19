@@ -1,0 +1,4 @@
+/home/xqm0629/Segmentation_breast_cancer_MRI/Dataset/32200.nii.gz
+/home/xqm0629/Segmentation_breast_cancer_MRI/Dataset/32201.nii.gz
+/home/xqm0629/Segmentation_breast_cancer_MRI/Dataset/32202.nii.gz
+/home/xqm0629/Segmentation_breast_cancer_MRI/Dataset/32203.nii.gz
