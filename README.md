@@ -6,7 +6,8 @@ python SEGMENT.py /home/xqm0629/Segmentation_breast_cancer_MRI/configFiles/confi
 
 GPU:
 code path: /home/xqm0629/Segmentation_breast_cancer_MRI  
-data path: /labs/gevaertlab/data/breast_segmentation_qinmei/dataset
+data path: /labs/gevaertlab/data/breast_segmentation_qinmei/dataset  
+conda activate SegmentationBreastCancer  
 conda env name: SegmentationBreastCancer  
 ssh xqm0629@Flandrien.stanford.edu
 
