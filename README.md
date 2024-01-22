@@ -1,8 +1,7 @@
 # Segmentation_breast_cancer_MRI
 Code and pre-trained convolutional neural network for breast cancer segmentation in MRI
 
-python SEGMENT.py /home/xqm0629/Segmentation_breast_cancer_MRI/configFiles/configFile_Testing_Prediction.py
-
+nohup python SEGMENT.py /home/xqm0629/Segmentation_breast_cancer_MRI/configFiles/configFile_Testing_Prediction.py > 20240121.log &
 
 GPU:
 code path: /home/xqm0629/Segmentation_breast_cancer_MRI  
